@@ -15,11 +15,11 @@ def sent_detector():
     fear = response['fear']
     joy = response['joy']
     sadness = response['sadness']
-    dominant = response['dominant']
+    dominant_emotion = response['dominant_emotion']
 
-    return return {'anger': anger, 'disgust': disgust, 'fear' : fear, 
-        'joy': joy, 'sadness' : sadness, 'dominant_emotion' : dominant}
-
+    return (f"For the given statement, the system response is 'anger': {anger}, 'disgust': {disgust}, "
+            f"'fear': {fear}, 'joy': {joy} and 'sadness': {sadness}. "
+            f"The dominant emotion is {dominant_emotion}.")
 @app.route("/")
 def render_index_page():
     return render_template('index.html')
